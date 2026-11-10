@@ -1,0 +1,11 @@
+---
+- name: Check application health
+  uri:
+    url: http://localhost:8082/actuator/health
+    method: GET
+    status_code: 200
+    return_content: yes
+  register: health_result
+  retries: 10
+  delay: 3
+  until: health_result.status == 200

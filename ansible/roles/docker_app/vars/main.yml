@@ -1,0 +1,5 @@
+---
+container_name: devops-app
+image_name: devops-demo:1.0
+host_port: 8082
+container_port: 8080

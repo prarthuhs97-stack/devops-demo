@@ -1,0 +1,25 @@
+---
+- name: Check whether the Docker image exists
+  command: docker image inspect {{ image_name }}
+  register: image_check
+  changed_when: false
+
+- name: Check whether the application container exists
+  command: docker container inspect {{ container_name }}
+  register: container_check
+  failed_when: false
+  changed_when: false
+
+- name: Remove the previous application container
+  command: docker rm -f {{ container_name }}
+  when: container_check.rc == 0
+
+- name: Deploy the application container
+  command: >
+    docker run -d
+    --name {{ container_name }}
+    -p {{ host_port }}:{{ container_port }}
+    {{ image_name }}
+  register: deployment
+  changed_when: true
+  notify: Check application health

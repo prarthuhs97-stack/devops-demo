@@ -1,0 +1,8 @@
+---
+- name: Deploy Spring Boot application using Docker
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - docker_app
