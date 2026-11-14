@@ -21,3 +21,5 @@ Run automated tests using:
 ./mvnw clean test
 
 CI/CD pipeline verified using Jenkins Poll SCM.
+
+CI/CD pipeline verified using Jenkins Poll SCM.
