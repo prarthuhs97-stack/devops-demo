@@ -19,3 +19,5 @@ A Java Spring Boot REST API developed as part of a DevOps self-learning assignme
 Run automated tests using:
 
 ./mvnw clean test
+
+CI/CD pipeline verified using Jenkins Poll SCM.
