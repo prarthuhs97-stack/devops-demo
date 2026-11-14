@@ -23,3 +23,6 @@ Run automated tests using:
 CI/CD pipeline verified using Jenkins Poll SCM.
 
 CI/CD pipeline verified using Jenkins Poll SCM.
+
+## CI
+Built automatically by Jenkins on every push.
